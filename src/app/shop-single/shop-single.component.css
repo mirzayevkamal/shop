@@ -1,0 +1,55 @@
+@media screen and (max-width: 768px) {
+  .single-prod-img {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+  .cart-desktop {
+    display: none !important;
+  }
+}
+
+.single-prod-img {
+  width: 65%;
+}
+
+.actions {
+  width: 65px;
+  height: 46px;
+  border: 1px solid #c9c9c9;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions p {
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  justify-content: center;
+  width: 100%;
+}
+
+.buttonsDiv {
+  border-left: 1px solid #c9c9c9;
+  align-items: center;
+  justify-content: center;
+}
+
+.increment {
+  font-size: 18px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid #c9c9c9;
+  cursor: pointer;
+}
+
+.decrement {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

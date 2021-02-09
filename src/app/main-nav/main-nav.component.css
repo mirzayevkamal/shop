@@ -1,0 +1,32 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+@media screen and (min-width:959px){
+  .sidenav, .sidenav-button, .mobile-nav{
+    display: none !important;
+  }
+}
+
+@media screen and (max-width:959px){
+  .desktop-nav{
+    display: none !important;
+  }
+  .my-logo{
+    width: 40px;
+  }
+}

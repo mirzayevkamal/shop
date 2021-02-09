@@ -1,0 +1,82 @@
+<mat-sidenav-container
+  style="position: fixed !important; width: 100%;z-index: 9999;"
+  class="sidenav-container"
+>
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>
+      <button
+        class="sidenav-button"
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/">HOME</a>
+      <a mat-list-item routerLink="/shop">SHOP</a>
+      <a mat-list-item routerLink="/about">ABOUT</a>
+      <a mat-list-item routerLink="/contact">CONTACT</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="container">
+        <div class="d-flex justify-content-between">
+          <div class="mobile-nav pr-4" (click)="drawer.toggle()">
+              <div class="nav-hamburger">
+                <div [ngClass]="(drawer.opened) ? 'nav-dots nav-open':'nav-dots nav-close'"></div>
+              </div>
+          </div>
+          <div class="mybrand">
+           <a routerLink="/"> <img class="my-logo" src="assets/images/logo.png" width="50px" /></a>
+          </div>
+          <div style="display: grid; align-items: center" class="desktop-nav">
+            <ul style="list-style: none" class="d-flex m-0 p-0">
+              <li class="nav-item">
+                <a class="nav-link text-white m-0 p-0 px-3" routerLink="/">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white m-0 p-0 px-3" routerLink="/shop">SHOP</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white m-0 p-0 px-3" routerLink="/about">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white m-0 p-0 px-3" routerLink="/contact">CONTACT</a>
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex align-items-center">
+            <button style="margin-top: 2px" mat-icon-button color="primary">
+              <img width="25px" src="assets/icons/user.svg" />
+            </button>
+            <button routerLink="/cart" [matBadge]="(inCart)? prodsQuantity : ''" mat-icon-button color="primary">
+              <img width="25px" src="assets/icons/bag.svg" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

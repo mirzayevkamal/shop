@@ -1,0 +1,56 @@
+<app-breadcrumb
+  [breadcrumb]="'SHOP'"
+  [breadcrumbLink]="'/shop'"
+></app-breadcrumb>
+<div class="container pt-5">
+  <div class="row pb-5">
+    <div class="col-lg-6 col-sm-12 d-flex justify-content-center">
+      <img [src]="product.image" class="single-prod-img" />
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <h3>{{product.name}}</h3>
+      <h4 class="font-weight-bold my-3">${{product.price}}</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+        molestiae cumque dolorum accusamus ipsa natus nulla vero repudiandae
+        quam accusantium?
+      </p>
+      <!-- <div class="d-flex mt-4">
+        <div class="actions">
+          <p>{{product.quantity}}</p>
+          <div class="d-flex flex-column buttonsDiv">
+            <mat-icon (click)="incrementQty()" class="increment">add</mat-icon>
+            <mat-icon (click)="decrementQty()" class="decrement">remove</mat-icon>
+          </div>
+        </div>
+        <button (click)="addToCart()" class="checkout">ADD TO CART</button>
+      </div> -->
+      <app-button (click)="addToCart()">ADD TO CART</app-button>
+      <ul class="m-0 p-0 pt-5" style="list-style: none">
+        <li><b>Category:</b> Clothes</li>
+        <li><b>Gender:</b> Woman</li>
+        <li><b>Size:</b> M</li>
+      </ul>
+    </div>
+  </div>
+  <mat-divider style="background:#c9c9c9;"></mat-divider>
+  <mat-tab-group mat-align-tabs="center">
+    <mat-tab label="Description" class="text-dark"
+      ><p class="pt-4">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit animi
+        dolorem, magnam nemo ea, laudantium eaque totam accusantium ab esse fuga
+        inventore repellat possimus saepe. Autem beatae laudantium porro dolore
+        corrupti doloremque, modi ea dolorem consequuntur. Soluta illo
+        consequatur consectetur corrupti aperiam, commodi eius hic repellat
+        perferendis, ab natus dolorem blanditiis fugit, exercitationem libero
+        reprehenderit!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quos, in
+        quia dolores, eaque cupiditate laboriosam vel expedita enim, consequatur
+        magni! Dolor, nemo!
+      </p>
+    </mat-tab>
+    <mat-tab label="Reviews(0)">Reviews</mat-tab>
+  </mat-tab-group>
+</div>

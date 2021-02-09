@@ -1,0 +1,75 @@
+<app-breadcrumb
+  [breadcrumb]="'SHOP'"
+  [breadcrumbLink]="'/shop'"
+></app-breadcrumb>
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-lg-2 p-0 m-0 mb-3">
+      <app-filter
+        [isEmpty]="ifEmpty"
+        (priceFilter)="priceFilterHandler($event)"
+        (searchFilter)="searchHandler($event)"
+      ></app-filter>
+    </div>
+    <div class="col-lg-10">
+      <p *ngIf="noProds"
+      style="
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        padding-top: 50px;
+      "
+    >
+      There are no products
+    </p>
+      <div class="row">
+        <div *ngFor="let product of products| paginate: { itemsPerPage: 10, currentPage: p }" class="col-lg-3">
+          <div class="card m-auto border-0" style="width: 250px">
+            <div class="card-body">
+              <div style="position: relative" class="d-flex single-product">
+                <img
+                  [src]="product.image"
+                  style="object-fit: contain"
+                  width="100%"
+                />
+                <div class="product-details">
+                  <div class="product-detail">
+                    <button
+                      class="shadow-sm mr-2"
+                      style="background: #fff; border-radius: 100px"
+                      mat-icon-button
+                      matTooltip="View item"
+                      matTooltipPosition="above"
+                      (click)="showProduct(product)"
+                    >
+                      <img src="assets/icons/view.svg" width="20px" />
+                    </button>
+                    <button
+                      class="shadow-sm ml-2"
+                      style="background: #fff; border-radius: 100px"
+                      mat-icon-button
+                      matTooltip="Add to cart"
+                      matTooltipPosition="above"
+                      (click)="addToCart(product)"
+                    >
+                      <img src="assets/icons/tocart.svg" width="20px" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="white-space: break-spaces">
+              <h6 class="text-center mb-1">{{ product.name }}</h6>
+              <h6 class="text-center font-weight-bold">${{ product.price }}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-5">
+        <div class="col-12 text-center">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+.checkout {
+  font-size: 14px;
+  background: black;
+  color: white;
+  letter-spacing: 3px;
+  border: none;
+  padding: 13px;
+  transition: 0.2s ease-in-out;
+  margin-top: 10px;
+  width: 100%;
+}
+
+
+@media screen and (max-width:768px){
+  .checkout{
+    width: 100%;
+  }
+}

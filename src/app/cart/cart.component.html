@@ -1,0 +1,115 @@
+<app-breadcrumb
+  [breadcrumb]="'CART'"
+  [breadcrumbLink]="'/cart'"
+></app-breadcrumb>
+<div *ngIf="prodsInCart.length < 1" class="d-flex justify-content-center">
+  <p class="pt-5">There are no items in your Cart.</p>
+</div>
+<div *ngIf="prodsInCart.length > 0" class="container cart-desktop pb-5 pt-5">
+  <table style="border: 1px solid rgb(224, 224, 224); width: 100%">
+    <thead style="border-bottom: 1px solid rgb(224, 224, 224)">
+      <th class="text-center w-50">PRODUCT</th>
+      <th class="text-center">PRICE</th>
+      <th class="text-center">QUANTITY</th>
+      <th class="text-center">SUBTOTAL</th>
+    </thead>
+    <tbody>
+      <tr
+        style="border-bottom: 1px solid rgb(224, 224, 224)"
+        *ngFor="let product of prodsInCart"
+      >
+        <td class="text-center d-flex align-items-center">
+          <button (click)="deleteProduct(product)" mat-icon-button class="mx-4">
+            <mat-icon>clear</mat-icon>
+          </button>
+          <img class="mx-4" [src]="product.image" width="70px" />
+          <p class="p-0 m-0 mx-4 text-left">{{ product.name }}</p>
+        </td>
+        <td class="text-center">${{ product.price }}</td>
+        <td class="text-center d-flex">
+          <div class="actions">
+            <p>{{ product.quantity }}</p>
+            <div class="d-flex flex-column buttonsDiv">
+              <mat-icon (click)="incrementQty(product)" class="increment"
+                >add</mat-icon
+              >
+              <mat-icon (click)="decrementQty(product)" class="decrement"
+                >remove</mat-icon
+              >
+            </div>
+          </div>
+        </td>
+        <td class="text-center font-weight-bold">
+          ${{ product.quantity * product.price }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h6 class="font-weight-bold pt-5 mt-3">CART TOTALS</h6>
+  <table style="border: 1px solid rgb(224, 224, 224); width: 100%">
+    <tbody>
+      <tr class="d-flex justify-content-between">
+        <td>Subtotal</td>
+        <td class="font-weight-bold">${{ cartTotal }}</td>
+      </tr>
+      <tr class="d-flex justify-content-between">
+        <td>Total</td>
+        <td class="font-weight-bold">${{ cartTotal }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <app-button>PROCEED TO CHECKOUT</app-button>
+</div>
+
+<div *ngIf="prodsInCart.length > 0" class="container cart-mobile">
+  <div *ngFor="let product of prodsInCart" class="card p-2 mt-1">
+    <div class="row">
+      <div
+        style="display: grid; align-items: center; justify-content: center"
+        class="col-4"
+      >
+        <img class="mx-4" [src]="product.image" width="70px" />
+      </div>
+      <div class="col-8">
+        <div class="d-flex justify-content-between">
+          <div class="details">
+            <p
+              style="font-size: 14px !important"
+              class="p-0 m-0 font-weight-bold text-left"
+            >
+              {{ product.name }}
+            </p>
+            <p style="font-size: 13px; color: gray" class="p-0 m-0 pb-1">
+              <b>Size:</b> M
+            </p>
+          </div>
+          <button
+            style="transform: translate(0px, -10px)"
+            (click)="deleteProduct(product)"
+            mat-icon-button
+          >
+            <mat-icon>clear</mat-icon>
+          </button>
+        </div>
+        <div class="cart-footer d-flex justify-content-between">
+          <div class="actions">
+            <p>{{ product.quantity }}</p>
+            <div class="d-flex flex-column buttonsDiv">
+              <mat-icon (click)="incrementQty(product)" class="increment"
+                >add</mat-icon
+              >
+              <mat-icon (click)="decrementQty(product)" class="decrement"
+                >remove</mat-icon
+              >
+            </div>
+          </div>
+          <p class="font-weight-bold p-0 m-0 mt-3 mr-1">
+            ${{ product.quantity * product.price }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-button>PROCEED TO CHECKOUT</app-button>
+
+</div>

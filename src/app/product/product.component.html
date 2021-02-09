@@ -1,0 +1,66 @@
+<div class="container pt-5">
+  <div class="d-flex justify-content-between mb-3">
+    <h1>{{ categoryName }}</h1>
+    <div class="controls">
+      <mat-button-toggle-group>
+        <mat-button-toggle (click)="moveLeft()" value="bold">
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle (click)="moveRight()" value="bold">
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+  <div class="d-flex">
+    <drag-scroll #nav>
+      <div
+        drag-scroll-item
+        *ngFor="let product of products; let i = index"
+        class="card border-0"
+        style="width: 18rem"
+      >
+        <div class="card-wrapper">
+          <div class="card-body pl-0 ml-0">
+            <div style="position: relative" class="d-flex single-product">
+              <img
+                [src]="product.image"
+                style="object-fit: contain"
+                width="250px"
+                height="350px"
+              />
+              <div class="product-details">
+                <div class="product-detail">
+                  <button
+                    class="shadow-sm mr-2"
+                    style="background: #fff; border-radius: 100px"
+                    mat-icon-button
+                    matTooltip="View item"
+                    matTooltipPosition="above"
+                    (click)="showProduct(product)"
+                  >
+                    <img src="assets/icons/view.svg" width="20px" />
+                  </button>
+                  <button
+                    class="shadow-sm ml-2"
+                    style="background: #fff; border-radius: 100px"
+                    mat-icon-button
+                    matTooltip="Add to cart"
+                    matTooltipPosition="above"
+                    (click)="addToCart(product)"
+                  >
+                    <img src="assets/icons/tocart.svg" width="20px" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="white-space: break-spaces">
+            <h6 class="text-center mb-1">{{ product.name }}</h6>
+            <h6 class="text-center font-weight-bold">${{ product.price }}</h6>
+          </div>
+        </div>
+      </div>
+    </drag-scroll>
+  </div>
+</div>

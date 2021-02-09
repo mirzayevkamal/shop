@@ -1,0 +1,72 @@
+th,
+td {
+  padding: 10px;
+}
+
+.checkout {
+  font-size: 13px;
+  background: black;
+  color: white;
+  border: none;
+  padding: 13px;
+  transition: 0.2s ease-in-out;
+}
+
+.checkout:hover {
+  transform: translate(0px, -5px);
+  transition: 0.2s ease-in-out;
+}
+
+.actions {
+  width: 65px;
+  height: 40px;
+  border: 1px solid #c9c9c9;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions p {
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  justify-content: center;
+  width: 100%;
+}
+
+.buttonsDiv {
+  border-left: 1px solid #c9c9c9;
+  align-items: center;
+  justify-content: center;
+}
+
+.increment {
+  font-size: 18px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid #c9c9c9;
+  cursor: pointer;
+}
+
+.decrement {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width:768px){
+  .cart-desktop{
+    display: none !important;
+  }
+}
+
+@media screen and (min-width:768px){
+  .cart-mobile{
+    display: none !important;
+  }
+}

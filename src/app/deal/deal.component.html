@@ -1,0 +1,24 @@
+<div class="container my-5 py-5">
+  <div class="row">
+    <div class="col-lg-6">
+      <img [src]="dealProduct.image" width="100%" />
+    </div>
+    <div class="col-lg-6">
+      <h2 style="border-bottom: 1px solid grey; width: 50%">DEAL of the Day</h2>
+      <h5 class="pt-3">Sneakers Original Nike New</h5>
+      <div class="d-flex my-3">
+        <p class="font-weight-bold">${{dealProduct.price}}</p>
+        <p class="ml-3" style="color: grey; text-decoration: line-through">
+          $380.00
+        </p>
+      </div>
+      <p class="p-0 m-0 mb-3" style="color: grey">
+        Let your attitude have the edge in your Nike Air Max Plus, a Tuned Air
+        experience that offers premium stability and unbelievable cushioning.
+        Featuring the OG's wavy design lines and an updated digital graphic, it
+        celebrates defiant style.
+      </p>
+      <app-button (click)="addToCart(dealProduct)">ADD TO CART</app-button>
+    </div>
+  </div>
+</div>

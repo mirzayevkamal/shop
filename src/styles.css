@@ -1,1 +1,107 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+html, body { height: 100%; }
+body { margin: 0 !important; font-family: 'Questrial', sans-serif !important; }
+
+.mat-toolbar, .mat-toolbar h1, .mat-toolbar h2, .mat-toolbar h3, .mat-toolbar h4, .mat-toolbar h5, .mat-toolbar h6{
+  font-family: 'Questrial', sans-serif !important;
+}
+
+.mat-badge-medium.mat-badge-above .mat-badge-content {
+  top: 5px !important;
+}
+
+.mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content{
+  right:-4px !important;
+}
+
+.mat-drawer-container{
+  background: transparent !important;
+  position: absolute !important;
+}
+
+.mat-button-toggle-appearance-standard{
+  background: #fff;
+  color: black;
+  border: 1px solid black;
+  border-radius: 0px;
+}
+
+.mat-button-toggle-checked{
+  color: black;
+  background: #fff;
+}
+
+.mat-button-toggle-checked.mat-button-toggle-appearance-standard{
+  color: black;
+  background: #fff;
+}
+
+.mat-button-toggle-checked .mat-button-toggle-focus-overlay {
+  border-bottom: solid 50px !important;
+}
+
+.mat-toolbar.mat-primary{
+  background: #9aa8b3 !important;
+  border-bottom: 1px solid #b3bec7;
+}
+
+.sidenav-container{
+  height: auto !important;
+}
+
+.mat-tab-label, .mat-tab-link{
+  color: black !important;
+}
+
+.mat-tab-labels{
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: rgba(0,0,0,.42);
+}
+.mat-form-field-appearance-legacy .mat-form-field-label, .mat-form-field-appearance-legacy .mat-hint {
+  color: rgba(0,0,0,.54);
+}
+
+.mat-radio-outer-circle {
+  border-color: rgba(0,0,0,.54);
+}
+
+.mat-expansion-panel {
+   background: none;
+  color: black;
+}
+
+.mat-expansion-panel-body {
+  padding: 10px !important;
+}
+
+.mat-expansion-panel-header{
+  padding: 10px !important;
+}
+
+.mat-expansion-panel-header-title{
+  color: black;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 6%), 0px 2px 2px 0px rgb(0 0 0 / 2%), 0px 1px 5px 0px rgb(0 0 0 / 7%);
+}
+
+
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+    background: none !important;
+}
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+  display: flex;
+  flex-grow: 1;
+  margin-right: 16px;
+  justify-content: center;
+  align-items: center;
+}
+

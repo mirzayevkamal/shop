@@ -1,0 +1,14 @@
+<div class="breadcrumb">
+  <div class="container">
+    <div class="main-text">
+      <div class="d-flex flex-column">
+        <h1 class="text-white">{{breadcrumb}}</h1>
+        <div class="bread-icon d-flex ml-2">
+          <mat-icon class="text-white">home</mat-icon>
+          <span class="text-white mx-2">&#8594;</span>
+          <a class="text-white" [routerLink]="breadcrumbLink">{{breadcrumb}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

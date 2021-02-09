@@ -1,0 +1,19 @@
+.product-details{
+  width:100%;
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(0px,100px);
+  transition: 0.3s ease-in-out;
+}
+
+.single-product{
+  overflow: hidden;
+}
+
+.single-product:hover .product-details{
+  transform:translate(0px,0px);
+  transition: 0.3s ease-in-out;
+}

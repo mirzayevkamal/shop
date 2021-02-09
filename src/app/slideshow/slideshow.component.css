@@ -1,0 +1,35 @@
+.slideshow{
+  position: relative;
+}
+
+@media screen and (max-width:768px){
+.slideshow{
+  display: none !important;
+}
+}
+
+.sldBtn {
+  position: absolute;
+  bottom: 29%;
+  left: 12%;
+}
+.sldBtn button {
+  width: 165px;
+  height: 48px;
+  border: 2px solid white;
+  background: none;
+  color: white;
+  transition: 0.1s linear;
+}
+
+.sldBtn button:hover{
+  background-color: black;
+  border: none;
+  transition: 0.2s linear;
+}
+
+@media screen and (min-width:1000px){
+  .sldBtn{
+    bottom: 38% !important;
+  }
+}
